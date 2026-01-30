@@ -1,65 +1,85 @@
+"use client"
 import Image from "next/image";
+import { Oswald, Poppins } from "next/font/google";
+import { FaHouse, FaRegMessages, FaCircleInfo, FaPhone, FaMessage } from "react-icons/fa6";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+const poppinsFont= Poppins({ display: 'swap', weight: '800', subsets: ['latin']})
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <div className="min-h-screen min-w-screen flex flex-col relative">
+        <nav className="fixed z-50 top-0 w-screen">
+          <div className="w-screen h-22 bg-white border flex items-center flex-row justify-between md:px-24">
+            <div className="flex-1 flex items-center gap-3">
+              <Image alt="logo" className="rounded-full border border-sky-500" width={50} height={50} src={"/logo.jpeg"}/>
+              <p className={`text-sky-500 ${poppinsFont.className} font-bold text-xl`}> DIGITAL SERVICE LAB</p>
+            </div>  
+            <div className="hidden xl:flex">
+              <ul className="flex  text-black gap-10">
+                <li className="flex gap-3 items-center"> <FaHouse className="text-xl"/>  Beranda </li>
+                <li className="flex gap-3 items-center"> <FaCircleInfo className="text-xl"/> Tentang  Kami</li>
+                <li className="flex gap-3 items-center"> <FaMessage className="text-xl"/> Ulasan </li>
+                <li className="flex gap-3 items-center"> <FaPhone className="text-xl"/> Hubungi </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <main className="pt-24 md:pb-24 border-b-2 flex h-auto md:min-h-screen w-full bg-white ">
+          <div className="grid flex-1 grid-cols-1 xl:grid-cols-2 gap-16">
+            <section className="flex gap-8 flex-col px-24 justify-center">
+              <h1 className="max-w-3xl text-sky-500 text-6xl font-extrabold">Digital Service Lab  Solusi Digital Cepat, Tepat, dan Terpercaya.</h1>
+              <p className="text-xl text-sky-700">
+                 Digital Service Lab adalah penyedia layanan servis laptop 
+                 dan handphone yang fokus pada solusi cepat, rapi, dan terpercaya. 
+                 Kami menangani berbagai kebutuhan mulai dari perbaikan hardware, perbaikan software, 
+                 upgrade perangkat, hingga perawatan rutin agar perangkat kembali optimal.
+              </p>
+              <div>
+                <button className="px-16 py-6 rounded-full bg-linear-to-r from-sky-500 to-teal-500 text-xl"> Mulai Pesan Sekarang</button>
+              </div>
+            </section>
+            <section className="relative flex flex-col items-center justify-center py-16">
+              <div className="z-10 mx-auto inset-0 from-emerald-200 to-sky-100 bg-linear-to-t rounded-4xl w-xl absolute"></div>
+              <div className="space-y-16 relative z-20 px-10">
+                <h1 className="text-3xl max-w-lg text-sky-900 font-bold text-center"> Perangkat rusak, WiFi lemot? Kami solusinya</h1>
+                <Swiper
+                slidesPerView={1}
+                spaceBetween={30}
+                loop={true}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                autoplay={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper w-125 h-83.5 rounded-3xl"
+                >
+                  <SwiperSlide> 
+                    <Image className="flex-none rounded-3xl" src={'/hero.jpg'} width={500} height={500} alt="hero" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Image className="flex-none rounded-3xl" src={'/hero2.jpg'} width={500} height={500} alt="hero" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Image className="flex-none rounded-3xl" src={'/hero3.jpg'} width={500} height={500} alt="hero" />
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+            </section>
+          </div>
+        </main>
+        <section id="tentang" className="pt-24 h-auto min-h-screen w-full bg-white">
+
+        </section>
+      </div>
+    </>
   );
 }
