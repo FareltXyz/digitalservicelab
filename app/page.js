@@ -76,8 +76,34 @@ export default function Home() {
             </section>
           </div>
         </main>
-        <section id="tentang" className="pt-24 h-auto min-h-screen w-full bg-white">
+        <section id="tentang" className="pt-24 h-auto min-h-screen w-full bg-white px-10">
+            <div className="w-full h-full gap-24 flex flex-col items-center">
+                <div className="space-y-7">
+                    <h1 className="text-4xl text-cyan-500 font-extrabold text-center">Tentang kami</h1>
+                    <h2 className="max-w-7xl text-cyan-600 text-xl text-center"> Kami menangani berbagai jenis kerusakan, mulai dari permasalahan software, penggantian dan upgrade hardware, hingga perbaikan tingkat lanjut. Setiap perangkat yang masuk akan melalui proses pengecekan terlebih dahulu agar solusi yang diberikan tepat dan transparan.</h2>
+                </div>
+                <div className="space-y-7">
+                    <h1 className="text-4xl text-teal-500 font-extrabold text-center"> Layanan Kami </h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 ">
+                        <div className="flex flex-col rounded-2xl shadow-md shadow-black/50 border w-md p-6">
+                            <div className="md:w-sm mx-auto rounded-full mb-5 h-2 bg-yellow-400 "></div>
+                            <div className="flex max-md:flex-col justify-between">
+                              <h3 className="text-2xl from-emerald-500 to-sky-500 bg-clip-text bg-linear-to-r font-bold text-transparent">Servis laptop</h3>
+                              <p className="text-xl text-gray-600">75k-350k IDR</p>
+                            </div>
 
+                            <ul className="text-gray-700 flex-1 mt-8 mb-4 space-y-2">
+                                <li>Ganti SSD/HDD</li>
+                                <li>Ganti Ram</li>
+                                <li>Ganti Keyboard</li>
+                                <li>Ganti Touchpad</li>
+                                <li>Ganti Speaker</li>
+                                <li>Ganti Baterai</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
       </div>
     </>
