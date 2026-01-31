@@ -108,7 +108,7 @@ export default function Home() {
                 </div>
                 <div className="space-y-7">
                     <h1 className="text-4xl text-teal-500 font-extrabold text-center"> Layanan Kami </h1>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
                       { services.map((data, i) => {
                         return (  
                           <div className="flex flex-col rounded-2xl shadow-md shadow-black/50 border p-6">
