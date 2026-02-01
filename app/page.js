@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import { Oswald, Poppins } from "next/font/google";
-import { FaHouse, FaRegMessages, FaCircleInfo, FaPhone, FaMessage, FaCheck } from "react-icons/fa6";
+import { FaRegEnvelope, FaWhatsapp, FaHouse, FaRegMessages, FaCircleInfo, FaPhone, FaMessage, FaCheck } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -35,6 +35,23 @@ const services = [
   }
 ]
 
+const ulasan = [
+  {
+    nama: "Andi Pratama",
+    keterangan: "Pelajar",
+    pesan: "Pelayanannya cepat dan rapi. Laptop yang tadinya lemot sekarang jadi jauh lebih ringan dan enak dipakai."
+  },
+  {
+    nama: "Rizky Maulana",
+    keterangan: "Karyawan",
+    pesan: "Teknisinya ramah dan komunikatif, semua dijelasin dengan jelas. Laptop kerja jadi normal lagi dan aman dipakai."
+  },
+  {
+    nama: "Nabila Putri",
+    keterangan: "Pelajar",
+    pesan: "HP saya sempat mati total dan nggak bisa dipakai. Setelah diservis di sini, sekarang normal lagi. Recommended banget."
+  }
+]
 
 export default function Home() {
   return (
@@ -56,9 +73,9 @@ export default function Home() {
             </div>
           </div>
         </nav>
-        <main className="pt-24 md:pb-24 border-b border-black/40  md:border-b-2 flex h-auto md:min-h-screen w-full bg-white ">
+        <main className="pt-24 md:pb-24 border-b border-black/35  md:border-b-flex h-auto md:min-h-screen w-full bg-white ">
           <div className="grid flex-1 grid-cols-1 xl:grid-cols-2 gap-16">
-            <section className="flex gap-8 flex-col px-10 md:px-24 justify-center">
+            <section className="flex gap-8 flex-col pt-14 px-10 md:px-24 justify-center">
               <h1 className="max-w-3xl text-sky-500 text-4xl md:text-6xl font-extrabold">Digital Service Lab. Solusi Digital Cepat, Tepat, dan Terpercaya.</h1>
               <p className="text-lg md:text-xl text-sky-700">
                  Digital Service Lab adalah penyedia layanan servis laptop 
@@ -70,7 +87,7 @@ export default function Home() {
                 <button className="px-8 py-6 md:px-16 md:py-6 rounded-full bg-linear-to-r from-sky-500 to-teal-500 text-md md:text-xl"> Mulai Pesan Sekarang</button>
               </div>
             </section>
-            <section className="relative flex flex-col items-center justify-center py-16 my-10">
+            <section className="relative flex flex-col items-center justify-center py-16 my-10 ">
               <div className="z-10 mx-auto inset-0 from-emerald-200 to-sky-100 bg-linear-to-t rounded-4xl w-auto max-w-sm md:max-w-xl absolute"></div>
               <div className="space-y-16 relative z-20 px-10">
                 <h1 className="text-2xl max-w-sm max-md:px-1 md:text-3xl md:max-w-lg text-sky-900 font-bold mx-auto text-center"> Perangkat rusak, WiFi lemot? Kami solusinya</h1>
@@ -101,17 +118,17 @@ export default function Home() {
           </div>
         </main>
         <section id="tentang" className="pt-24 max-md:pb-24 h-auto min-h-screen w-full bg-white px-10">
-            <div className="w-full h-full gap-24 flex flex-col items-center">
+            <div className="w-full h-full gap-24 flex flex-col items-center mt-24">
                 <div className="space-y-7">
                     <h1 className="text-4xl text-cyan-500 font-extrabold text-center">Tentang kami</h1>
                     <h2 className="max-w-7xl text-cyan-600 text-xl text-center"> Kami menangani berbagai jenis kerusakan, mulai dari permasalahan software, penggantian dan upgrade hardware, hingga perbaikan tingkat lanjut. Setiap perangkat yang masuk akan melalui proses pengecekan terlebih dahulu agar solusi yang diberikan tepat dan transparan.</h2>
                 </div>
                 <div className="space-y-7">
                     <h1 className="text-4xl text-teal-500 font-extrabold text-center"> Layanan Kami </h1>
-                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
                       { services.map((data, i) => {
                         return (  
-                          <div className="flex flex-col rounded-2xl shadow-md shadow-black/50 border p-6">
+                          <div key={i} className="flex flex-col rounded-2xl shadow-md shadow-black/50 border p-6">
                             <div className="md:w-xs mx-auto rounded-full mb-5 h-2 bg-yellow-400 "></div>
                             <div className="flex max-md:flex-col justify-between">
                               <h3 className="text-2xl from-emerald-500 to-sky-500 bg-clip-text bg-linear-to-r md:mx-3 font-bold text-transparent flex-1">{data.name}</h3>
@@ -119,7 +136,7 @@ export default function Home() {
                             </div>
                             <p className="text-gray-500 text-xl mt-8">Meliputi:</p>
                             <ul className="text-gray-500 flex-1 max-w-xs mb-4 space-y-2">
-                              {data.list.map((list, i) => {return(<li className="flex items-center gap-3 italic"><FaCheck />{list}</li>)})}
+                              {data.list.map((list, i) => {return(<li key={i} className="flex items-center gap-3 italic"><FaCheck />{list}</li>)})}
                                 
                             
                             </ul>
@@ -129,6 +146,48 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+        </section>
+        <section id="ulasan" className="pt-24 max-md:pb-24 h-auto min-h-screen w-full bg-white px-10">
+              <div className="grid grid-cols-1 max-md:gap-24 md:grid-cols-2 pt-5 p-3">
+                      <div className="flex flex-col gap-4 items-center">
+                          <h2 className="text-3xl text-emerald-900 font-extrabold"> Ulasan</h2>
+                          <div className="grid grid-cols-1 gap-6 overflow-y-visible">
+                            {ulasan.map((ulasan, i) => {
+                              return (
+
+                                <div key={i} className="flex flex-col shadow-md p-5 rounded-xl shadow-black/50">
+                                  <div className="flex flex-row gap-6">
+                                      <div className="flex">
+                                        <img className="rounded-full w-12.5 h-12.5" src="https://placehold.co/400" width={50} height={50} alt="pfp"></img>
+                                      </div>
+                                      <div className="flex flex-col">
+                                        <h3 className="text-xl text-black font-bold"> {ulasan.nama} </h3>
+                                        <p className="text-md text-gray-700 italic">{ulasan.keterangan}</p>
+                                        <span className="text-sm text-yellow-500">⭐⭐⭐⭐⭐</span>
+                                      </div>
+                                  </div>
+                                  <div className="flex-1 max-w-xs py-5 pt-7">
+                                      <p className="text-sm text-black italic">{ulasan.pesan}</p>
+                                  </div>
+                              </div>
+                              )
+                            })}
+                          </div>
+                      </div>
+                      <div className="flex flex-col items-center  gap-4">
+                        <h2 className="text-3xl font-bold text-black">Hubungi Kami</h2>
+                        <div className="grid grid-cols-1 gap-4">
+                          <div className="flex flex-row items-center gap-3 p-4 py-6 shadow-md shadow-black/50 border rounded-xl">
+                              <FaWhatsapp  className="text-black text-3xl"/>
+                              <p className="flex-1 text-gray-600">+62 123-4567-8901</p>
+                          </div>
+                          <div className="flex flex-row items-center gap-3 p-4 py-6 shadow-md shadow-black/50 border rounded-xl">
+                              <FaRegEnvelope className="text-black text-3xl"/>
+                              <p className="flex-1 text-gray-600">someone@example.com</p>
+                          </div>
+                        </div>
+                      </div>
+              </div>
         </section>
       </div>
     </>
