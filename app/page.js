@@ -179,11 +179,11 @@ export default function Home() {
                         <div className="grid grid-cols-1 gap-4">
                           <div className="flex flex-row items-center gap-3 p-4 py-6 shadow-md shadow-black/50 border rounded-xl">
                               <FaWhatsapp  className="text-black text-3xl"/>
-                              <p className="flex-1 text-gray-600">+62 123-4567-8901</p>
+                              <p className="flex-1 text-gray-600">+62 858-9535-4443</p>
                           </div>
                           <div className="flex flex-row items-center gap-3 p-4 py-6 shadow-md shadow-black/50 border rounded-xl">
-                              <FaRegEnvelope className="text-black text-3xl"/>
-                              <p className="flex-1 text-gray-600">someone@example.com</p>
+                              <FaRegEnvelope className="text-black text-md"/>
+                              <p className="flex-1 text-xs text-gray-600">muhammadfarelwardhana@gmail.com</p>
                           </div>
                         </div>
                       </div>
