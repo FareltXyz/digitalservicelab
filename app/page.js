@@ -78,10 +78,7 @@ export default function Home() {
             <section className="flex gap-8 flex-col pt-14 px-10 md:px-24 justify-center">
               <h1 className="max-w-3xl text-sky-500 text-4xl md:text-6xl font-extrabold">Digital Service Lab. Solusi Digital Cepat, Tepat, dan Terpercaya.</h1>
               <p className="text-lg md:text-xl text-sky-700">
-                 Digital Service Lab adalah penyedia layanan servis laptop 
-                 dan handphone yang fokus pada solusi cepat, rapi, dan terpercaya. 
-                 Kami menangani berbagai kebutuhan mulai dari perbaikan hardware, perbaikan software, 
-                 upgrade perangkat, hingga perawatan rutin agar perangkat kembali optimal.
+                 Digital Service Lab menyediakan layanan servis laptop dan handphone dengan solusi cepat, rapi, dan terpercaya untuk perbaikan, upgrade, dan perawatan perangkat.
               </p>
               <div>
                 <button className="px-8 py-6 md:px-16 md:py-6 rounded-full bg-linear-to-r from-sky-500 to-teal-500 text-md md:text-xl"> Mulai Pesan Sekarang</button>
@@ -121,7 +118,7 @@ export default function Home() {
             <div className="w-full h-full gap-24 flex flex-col items-center mt-24">
                 <div className="space-y-7">
                     <h1 className="text-4xl text-cyan-500 font-extrabold text-center">Tentang kami</h1>
-                    <h2 className="max-w-7xl text-cyan-600 text-xl text-center"> Kami menangani berbagai jenis kerusakan, mulai dari permasalahan software, penggantian dan upgrade hardware, hingga perbaikan tingkat lanjut. Setiap perangkat yang masuk akan melalui proses pengecekan terlebih dahulu agar solusi yang diberikan tepat dan transparan.</h2>
+                    <h2 className="max-w-7xl text-cyan-600 text-xl text-center"> Kami menangani perbaikan software, penggantian dan upgrade hardware, hingga perbaikan lanjutan, dengan proses pengecekan awal agar solusi tepat dan transparan.</h2>
                 </div>
                 <div className="space-y-7">
                     <h1 className="text-4xl text-teal-500 font-extrabold text-center"> Layanan Kami </h1>
