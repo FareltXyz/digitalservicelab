@@ -145,19 +145,19 @@ export default function Home() {
             </div>
         </section>
         <section id="ulasan" className="pt-24 max-md:pb-24 h-auto min-h-screen w-full bg-white px-10">
-              <div className="grid grid-cols-1 max-md:gap-24 md:grid-cols-2 pt-5 p-3">
+              <div className="grid grid-cols-1 max-md:gap-24 md:grid-cols-2 md:grid-rows-2 pt-5 p-3">
                       <div className="flex flex-col gap-4 items-center">
                           <h2 className="text-3xl text-emerald-900 font-extrabold"> Ulasan</h2>
-                          <div className="grid grid-cols-1 gap-6 overflow-y-visible">
+                          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-6 overflow-y-visible">
                             {ulasan.map((ulasan, i) => {
                               return (
 
                                 <div key={i} className="flex flex-col shadow-md p-5 rounded-xl shadow-black/50">
                                   <div className="flex flex-row gap-6">
                                       <div className="flex">
-                                        <img className="rounded-full w-12.5 h-12.5" src="https://placehold.co/400" width={50} height={50} alt="pfp"></img>
+                                        <img className="rounded-full w-12.5 h-12.5 min-w-12.5 min-h-12.5" src="https://placehold.co/400" width={50} height={50} alt="pfp"></img>
                                       </div>
-                                      <div className="flex flex-col">
+                                      <div className="flex flex-col flex-1">
                                         <h3 className="text-xl text-black font-bold"> {ulasan.nama} </h3>
                                         <p className="text-md text-gray-700 italic">{ulasan.keterangan}</p>
                                         <span className="text-sm text-yellow-500">⭐⭐⭐⭐⭐</span>
@@ -173,7 +173,7 @@ export default function Home() {
                       </div>
                       <div className="flex flex-col items-center  gap-4">
                         <h2 className="text-3xl font-bold text-black">Hubungi Kami</h2>
-                        <div className="grid grid-cols-1 gap-4">
+                        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                           <div className="flex flex-row items-center gap-3 p-4 py-6 shadow-md shadow-black/50 border rounded-xl">
                               <FaWhatsapp  className="text-black text-3xl"/>
                               <p className="flex-1 text-gray-600">+62 858-9535-4443</p>
@@ -186,6 +186,9 @@ export default function Home() {
                       </div>
               </div>
         </section>
+        <footer className="w-full h-24 flex flex-row justify-center items-center bg-sky-600">
+            <h3 className="text-white font-bold italic">©2026 DigitalServiceLab.</h3>
+        </footer>
       </div>
     </>
   );
