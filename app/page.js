@@ -16,7 +16,7 @@ const services = [
     name: "Perbaikan Laptop",
     harga: "75k-350k IDR",
     list: [
-      "Ganti Ram", "Ganti SSD/HDD", "Ganti Keyboard", "Ganti Touchpad", "Ganti Speaker", "Ganti Baterai"
+      "Ganti/Upgrade Komponen (Ram, SSD/HDD, Keyboard, Touchpad, Speaker, Baterai)", "Instalasi Operating System", "Jasa Backup/Restore Data File", "Ganti ", "Ganti ", "Ganti "
     ]
   },
   {
@@ -133,7 +133,7 @@ export default function Home() {
                             </div>
                             <p className="text-gray-500 text-xl mt-8">Meliputi:</p>
                             <ul className="text-gray-500 flex-1 max-w-xs mb-4 space-y-2">
-                              {data.list.map((list, i) => {return(<li key={i} className="flex items-center gap-3 italic"><FaCheck />{list}</li>)})}
+                              {data.list.map((list, i) => {return(<li key={i} className="flex items-center gap-3 italic"><span className="mb-auto pt-1"><FaCheck  className="flex-none"/></span>{list}</li>)})}
                                 
                             
                             </ul>
