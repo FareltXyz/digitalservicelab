@@ -16,7 +16,7 @@ const services = [
     name: "Perbaikan Laptop",
     harga: "75k-350k IDR",
     list: [
-      "Ganti/Upgrade Komponen (Ram, SSD/HDD, Keyboard, Touchpad, Speaker, Baterai)", "Instalasi Operating System", "Jasa Backup/Restore Data File", "Ganti ", "Ganti ", "Ganti "
+      "Ganti/Upgrade Komponen (Ram, SSD/HDD, Keyboard, Touchpad, Speaker, Baterai)", "Instalasi Operating System", "Jasa Backup/Restore Data File", "Jasa Optimalisasi Perangkat ", "Jasa Servis"
     ]
   },
   {
