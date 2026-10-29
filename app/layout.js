@@ -1,19 +1,38 @@
-import { Poppins, Bungee } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
-const popinsFont = Poppins({ display: "swap", weight: '500', subsets: ["latin"]});
+
+const jakartaFont = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-jakarta",
+});
 
 export const metadata = {
-  title: "Digital Service Lab. Solusi Digital Cepat, Tepat, dan Terpercaya.",
-  description: "Digital Service Lab adalah penyedia layanan servis laptop dan handphone yang fokus pada solusi cepat, rapi, dan terpercaya. Kami menangani berbagai kebutuhan mulai dari perbaikan hardware, perbaikan software, upgrade perangkat, hingga perawatan rutin agar perangkat kembali optimal.",
+  title: "Digital Service Lab | Solusi Reparasi Gadget & Layanan Digital Bergaransi",
+  description: "Layanan perbaikan laptop, komputer, smartphone, dan instalasi jaringan WiFi berstandar teknisi profesional. Cepat, transparan, bergaransi resmi, dan dapat diandalkan.",
+  keywords: [
+    "servis laptop",
+    "reparasi hp",
+    "digital service lab",
+    "pasang wifi",
+    "ganti lcd laptop",
+    "upgrade ram ssd",
+    "service laptop terdekat",
+    "teknisi komputer profesional"
+  ],
+  authors: [{ name: "Digital Service Lab" }],
+  icons: {
+    icon: "/logo.jpeg",
+    apple: "/logo.jpeg",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html data-theme="light" lang="en" suppressHydrationWarnin>
-      <body
-        className={`${popinsFont.className} $antialiased`}
-      >
+    <html lang="id" data-theme="light" suppressHydrationWarning>
+      <body className={`${jakartaFont.className} antialiased selection:bg-cyan-500 selection:text-white`}>
         <Providers>
           {children}
         </Providers>
